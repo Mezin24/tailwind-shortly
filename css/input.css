@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.btn {
+  @apply px-8 py-3 font-bold bg-cyan text-white rounded-full hover:opacity-70;
+}
+.btn-lg {
+  @apply py-5 px-10 text-2xl  lg:py-4;
+}
