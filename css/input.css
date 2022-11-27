@@ -2,9 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  h2 {
+    @apply text-4xl mb-6 font-bold text-center capitalize;
+  }
+  h5 {
+    @apply pt-6 text-xl font-bold text-center capitalize md:text-left;
+  }
+}
+
 .btn {
-  @apply px-8 py-3 font-bold bg-cyan text-white rounded-full hover:opacity-70;
+  @apply px-8 py-3 font-bold bg-cyan text-white rounded-lg hover:opacity-70;
 }
 .btn-lg {
   @apply py-5 px-10 text-2xl  lg:py-4;
+}
+.btn-rounded {
+  @apply rounded-full;
+}
+.btn-secondary {
+  @apply bg-darkViolet;
+}
+
+.ficon:hover {
+  filter: invert(79%) sepia(61%) saturate(464%) hue-rotate(130deg)
+    brightness(389%) contrast(85%);
+}
+
+#cta {
+  background-image: url('../images/bg-boost-desktop.svg');
+  background-repeat: no-repaet;
+  background-size: cover;
+}
+
+/* Hamburger Button */
+.hamburger {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  transition: all 0.25s;
+  position: relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  top: 0;
+  left: 0;
+  background: black;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.hamburger-middle {
+  transform: translateY(7px);
+}
+.hamburger-bottom {
+  transform: translateY(14px);
+}
+
+.hamburger.open {
+  transform: rotate(90deg);
+}
+
+.hamburger.open .hamburger-middle {
+  display: none;
+}
+.hamburger.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+.hamburger.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
+
+#menu a:not(:last-child) {
+  @apply hover:text-cyan;
 }
